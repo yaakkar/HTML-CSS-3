@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.parent {
+  display: grid;
+  grid-template-areas:
+    'header header menu menu menu menu'
+    'hero hero hero hero hero hero'
+    'main main main right image image'
+    'main main main right extra extra'
+    'banner banner banner banner banner banner';
+  padding: 10px;
+  text-transform: uppercase;
+  width: 800px;
+  margin: auto;
+}
+
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.item1 {
+  grid-area: header;
+  background-color: #0f1629;
+  color: white;
+}
+
+.item2 {
+  grid-area: menu;
+  background-color: #ef3c4f;
+  color: white;
+}
+
+.item3 {
+  grid-area: hero;
+  background-color: #4c86c6;
+  color: white;
+  height: 500px;
+}
+
+.item4 {
+  grid-area: main;
+  background-color: #24344b;
+  color: white;
+  height: 161px;
+}
+
+.item5 {
+  grid-area: right;
+  width: 70px;
+}
+
+.item6 {
+  grid-area: image;
+  background-color: #c1e4e6;
+}
+
+.item7 {
+  grid-area: extra;
+  background-color: #4dbd97;
+}
+
+.item8 {
+  grid-area: banner;
+  background-color: #fed269;
+  height: 90px;
+}
+.child:nth-child(1),
+.child:nth-child(2),
+.child:nth-child(3),
+.child:nth-child(4),
+.child:nth-child(5) {
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .parent {
+    width: 100%;
+    max-width: 768px;
+    grid-template-areas:
+      'header header header header header header'
+      'menu hero hero hero hero hero'
+      'menu main main main main main'
+      'menu banner banner banner banner banner'
+      'menu extra extra extra image image';
+  }
+
+  .item3 {
+    height: 200px;
+  }
+
+  .item4 {
+    height: 200px;
+  }
+
+  .item8 {
+    height: 100px;
+  }
+
+  .item5 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .parent {
+    width: 100%;
+    grid-template-areas:
+      'header'
+      'menu'
+      'hero'
+      'main'
+      'banner'
+      'extra'
+      'image';
+    grid-template-columns: 1fr;
+  }
+
+  .item3 {
+    height: 250px;
+  }
+
+  .item4 {
+    height: auto;
+    min-height: 150px;
+  }
+
+  .item5 {
+    display: none;
+  }
+}
